@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using tabuleiro;
+using Enums;
 
-namespace xadrez_console.xadrez
+namespace xadrez
 {
-    class Rei
+    class Rei : Peca
     {
+        public Rei(Cor cor, Tabuleiro tab)
+            : base(cor, tab)
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return "R";
+        }
     }
 }

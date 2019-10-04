@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using tabuleiro;
+using Enums;
 
-namespace xadrez_console.xadrez
+namespace xadrez
 {
-    class Torre
+    class Torre : Peca
     {
+        public Torre(Cor cor, Tabuleiro tab)
+            : base(cor, tab)
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return "T";
+        }
     }
 }
