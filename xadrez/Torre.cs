@@ -4,11 +4,13 @@ using Enums;
 namespace xadrez
 {
     class Torre : Peca
+        
     {
-        public Torre(Cor cor, Tabuleiro tab)
-            : base(cor, tab)
+        
+        public Torre(Tabuleiro tab, Cor cor)
+            : base(tab, cor)
         {
-
+            
         }
 
         private bool PodeMover(Posicao pos)
@@ -29,8 +31,8 @@ namespace xadrez
 
             Posicao pos = new Posicao(0, 0);
 
-            //norte
-            pos.DefinirValores(pos.Linha - 1, Posicao.Coluna);
+            // acima
+            pos.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
@@ -41,8 +43,8 @@ namespace xadrez
                 pos.Linha = pos.Linha - 1;
             }
 
-            //sul
-            pos.DefinirValores(pos.Linha + 1, Posicao.Coluna);
+            // abaixo
+            pos.DefinirValores(Posicao.Linha + 1, Posicao.Coluna);
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
@@ -53,8 +55,8 @@ namespace xadrez
                 pos.Linha = pos.Linha + 1;
             }
 
-            //leste
-            pos.DefinirValores(pos.Linha, Posicao.Coluna + 1);
+            // direita
+            pos.DefinirValores(Posicao.Linha, Posicao.Coluna + 1);
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
@@ -65,8 +67,8 @@ namespace xadrez
                 pos.Coluna = pos.Coluna + 1;
             }
 
-            //oeste
-            pos.DefinirValores(pos.Linha, Posicao.Coluna - 1);
+            // esquerda
+            pos.DefinirValores(Posicao.Linha, Posicao.Coluna - 1);
             while (Tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.Linha, pos.Coluna] = true;
