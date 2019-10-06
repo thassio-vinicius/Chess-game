@@ -37,12 +37,20 @@ namespace xadrez_console
 
                     partida.RealizaJogada(origem, destino);
                 }
+                 
                 catch (TabuleiroException e)
                 {
                     Console.WriteLine(e.Message);
                     Console.ReadLine();
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.ReadLine();
+                }
             }
+            Console.Clear();
+            Tela.ImprimirPartida(partida);
 
 
 
